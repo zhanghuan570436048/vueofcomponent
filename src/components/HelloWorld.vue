@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    {{msg}}
+    {{msg20200425分支测试}}
   </div>
 </template>
 
