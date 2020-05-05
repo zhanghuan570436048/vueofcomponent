@@ -1,6 +1,10 @@
 <template>
   <div class="hello">
-    {{msg}}
+    <div class="layui-btn-container">
+      <button type="button" class="layui-btn" @click="goInfo">表格基础组件</button>
+      <button type="button" class="layui-btn">按钮二</button>
+      <button type="button" class="layui-btn">按钮三</button>
+    </div>
   </div>
 </template>
 
@@ -8,8 +12,12 @@
 export default {
   name: 'HelloWorld',
   data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+    return {}
+  },
+  mounted () {},
+  methods: {
+    goInfo () {
+      this.$router.push('/tableBase')
     }
   }
 }
@@ -17,18 +25,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.hello {
+  width: 800px;
+  height: 200px;
+  border: 1px green dashed;
+  margin: 0 auto;
+  padding: 10px;
 }
 </style>

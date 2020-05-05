@@ -4,6 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>vueofcomponent</title>
+    <link rel="stylesheet" href="./static/dist/css/layui.css">
+    <script src="./static/dist/layui.all.js"></script>
+    <script>
+      ;!function(){
+        //无需再执行layui.use()方法加载模块，直接使用即可
+        var form = layui.form
+        ,layer = layui.layer;
+      }();
+      </script>
   </head>
   <body>
     <div id="app"></div>
