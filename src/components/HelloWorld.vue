@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
     <div class="layui-btn-container">
-      <button type="button" class="layui-btn" @click="goInfo">表格基础组件</button>
-      <button type="button" class="layui-btn">按钮二</button>
+      <button type="button" class="layui-btn" @click="goInfo(1)">表格基础组件</button>
+      <button type="button" class="layui-btn" @click="goInfo(2)">按钮二</button>
       <button type="button" class="layui-btn">按钮三</button>
     </div>
   </div>
@@ -16,8 +16,17 @@ export default {
   },
   mounted () {},
   methods: {
-    goInfo () {
-      this.$router.push('/tableBase')
+    goInfo (type) {
+      switch (type) {
+        case 1:
+          this.$router.push('/tableBase')
+          break
+        case 2:
+          this.$router.push('/tableBase')
+          break
+        default:
+          break
+      }
     }
   }
 }
