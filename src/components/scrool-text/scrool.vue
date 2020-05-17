@@ -73,7 +73,7 @@ export default {
             document.querySelector('#table4').scrollIntoView()
             break
           default:
-            document.querySelector('#table5').scrollIntoView()
+            document.querySelector('#table5').scrollIntoView('smooth')
         }
       },
       deep: true
@@ -113,7 +113,9 @@ margin: 10px 0px;
 .table5 {
     background-color: blueviolet;
 }
-body {
-    transition: all 1s linear;
+</style>
+<style>
+html {
+    scroll-behavior: smooth
 }
 </style>
