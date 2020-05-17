@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 
 import tableBase from '@/components/table-base/table'
+import Scrool from '@/components/scrool-text/scrool'
 
 Vue.use(Router)
 
@@ -17,6 +18,11 @@ export default new Router({
       path: '/tableBase',
       name: 'table-base',
       component: tableBase
+    },
+    {
+      path: '/scrool',
+      name: 'scrool',
+      component: Scrool
     }
   ]
 })

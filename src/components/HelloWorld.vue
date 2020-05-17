@@ -2,7 +2,7 @@
   <div class="hello">
     <div class="layui-btn-container">
       <button type="button" class="layui-btn" @click="goInfo">表格基础组件</button>
-      <button type="button" class="layui-btn">按钮二</button>
+      <button type="button" class="layui-btn" @click="goInfo2">按钮二</button>
       <button type="button" class="layui-btn">按钮三</button>
     </div>
   </div>
@@ -18,6 +18,9 @@ export default {
   methods: {
     goInfo () {
       this.$router.push('/tableBase')
+    },
+    goInfo2 () {
+      this.$router.push('/scrool')
     }
   }
 }
