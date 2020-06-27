@@ -2,8 +2,8 @@
   <div class="hello">
     <div class="layui-btn-container">
       <button type="button" class="layui-btn" @click="goInfo">表格基础组件</button>
-      <button type="button" class="layui-btn" @click="goInfo2">按钮二</button>
-      <button type="button" class="layui-btn">按钮三</button>
+      <button type="button" class="layui-btn" @click="goInfo2">页面滚动</button>
+      <button type="button" class="layui-btn" @click="goInfo3">表格封装</button>
     </div>
   </div>
 </template>
@@ -21,6 +21,9 @@ export default {
     },
     goInfo2 () {
       this.$router.push('/scrool')
+    },
+    goInfo3 () {
+      this.$router.push('/table')
     }
   }
 }

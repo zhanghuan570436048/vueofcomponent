@@ -23,6 +23,11 @@ export default new Router({
       path: '/scrool',
       name: 'scrool',
       component: Scrool
+    },
+    {
+      path: '/table',
+      name: 'table-test',
+      component: () => import('../components/table-two/tableTest.vue')
     }
   ]
 })
