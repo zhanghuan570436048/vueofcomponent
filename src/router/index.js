@@ -27,7 +27,7 @@ export default new Router({
     {
       path: '/table',
       name: 'table-test',
-      component: () => import('../components/table-three/tableTest.vue')
+      component: () => import('../components/table-four/tableTest.vue')
     }
   ]
 })
