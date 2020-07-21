@@ -28,6 +28,11 @@ export default new Router({
       path: '/table',
       name: 'table-test',
       component: () => import('../components/table-four/tableTest.vue')
+    },
+    {
+      path: '/form',
+      name: 'form-test',
+      component: () => import('../components/form-basic/formTest.vue')
     }
   ]
 })

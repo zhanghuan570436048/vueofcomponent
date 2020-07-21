@@ -4,6 +4,7 @@
       <button type="button" class="layui-btn" @click="goInfo">表格基础组件</button>
       <button type="button" class="layui-btn" @click="goInfo2">页面滚动</button>
       <button type="button" class="layui-btn" @click="goInfo3">表格封装</button>
+      <button type="button" class="layui-btn" @click="goInfo4">表单封装</button>
     </div>
   </div>
 </template>
@@ -24,6 +25,9 @@ export default {
     },
     goInfo3 () {
       this.$router.push('/table')
+    },
+    goInfo4 () {
+      this.$router.push('/form')
     }
   }
 }
