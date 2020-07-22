@@ -9,11 +9,11 @@
       class="demo-ruleForm">
       <template v-for="(item,index) in formConfing">
       <el-form-item :label="item.label" prop="name" :key="index" v-if="item.type==='input'" :style="{'width':(item.width||'40%')}">
-        <el-input v-model="ruleForm.name"></el-input>
+        <el-input v-model="ruleForm[item.name]"></el-input>
       </el-form-item>
 
       <el-form-item label="活动区域" prop="region"  :key="index" v-if="item.type==='selected'" :style="{'width':(item.width||'40%')}">
-        <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
+        <el-select v-model="ruleForm[item.name]" placeholder="请选择活动区域">
           <el-option label="区域一" value="shanghai"></el-option>
           <el-option label="区域二" value="beijing"></el-option>
         </el-select>
@@ -33,7 +33,7 @@
         </el-col>
       </el-form-item>
       <el-form-item label="活动性质" prop="type"  :key="index" v-if="item.type==='checkboxGroup'">
-        <el-checkbox-group v-model="ruleForm.type">
+        <el-checkbox-group v-model="ruleForm[item.name]">
           <el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>
           <el-checkbox label="地推活动" name="type"></el-checkbox>
           <el-checkbox label="线下主题活动" name="type"></el-checkbox>
@@ -42,14 +42,14 @@
       </el-form-item>
 
       <el-form-item label="特殊资源" prop="resource"  :key="index" v-if="item.type==='radioGroup'">
-        <el-radio-group v-model="ruleForm.resource">
+        <el-radio-group v-model="ruleForm[item.name]">
           <el-radio label="线上品牌商赞助"></el-radio>
           <el-radio label="线下场地免费"></el-radio>
         </el-radio-group>
       </el-form-item>
 
       <el-form-item label="活动形式" prop="desc"  :key="index" v-if="item.type==='textarea'">
-        <el-input type="textarea" v-model="ruleForm.desc"></el-input>
+        <el-input type="textarea" v-model="ruleForm[item.name]"></el-input>
       </el-form-item>
       </template>
       <el-form-item>
@@ -71,16 +71,16 @@ export default {
   },
   data () {
     return {
-      ruleForm: {
-        name: '',
-        region: '',
-        date1: '',
-        date2: '',
-        delivery: false,
-        type: [],
-        resource: '',
-        desc: ''
-      },
+      // ruleForm: {
+      //   name: '',
+      //   region: '',
+      //   date1: '',
+      //   date2: '',
+      //   delivery: false,
+      //   type: [],
+      //   resource: '',
+      //   desc: ''
+      // },
       rules: {
         name: [
           { required: true, message: '请输入活动名称', trigger: 'blur' },
@@ -118,6 +118,18 @@ export default {
         ],
         desc: [{ required: true, message: '请填写活动形式', trigger: 'blur' }]
       }
+    }
+  },
+  computed: {
+    ruleForm: function () {
+      let obj = {}
+      let arr = this.formConfing.map(item => {
+        return item.name
+      })
+      new Set(arr).map(item => {
+        obj.item = ''
+      })
+      return obj
     }
   },
   methods: {
